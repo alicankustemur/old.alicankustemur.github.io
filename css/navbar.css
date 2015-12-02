@@ -1,0 +1,20 @@
+/*  mega-dropdown-menu */
+@import url(mega-dropdown-menu.css);
+
+
+.navbar-default{
+	background-color: #303030;
+}
+
+.navbar-default{
+	font-size: 13px;
+}
+
+.navbar-brand{
+	font-size: 15px;
+}
+
+input[name="search"]{
+	position: relative;
+	top: 5px;
+}
