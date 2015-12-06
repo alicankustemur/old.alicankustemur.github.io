@@ -117,6 +117,6 @@
          //page count
          totalPostPage();
 
-         getPost();
+         
 
     }
