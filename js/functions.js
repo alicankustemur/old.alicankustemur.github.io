@@ -76,7 +76,7 @@ function getPagination(num) {
 
 function getPost() {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "service/posts.json",
         data: {
             "id": "id"
