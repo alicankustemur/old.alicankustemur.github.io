@@ -101,8 +101,7 @@
 
                 },
                 error: function(err) {
-                    alert("error");
-                    //alert(err.responseText);
+                    alert(err.responseText);
                 }
             });
     }
