@@ -76,7 +76,7 @@ function getPagination(num) {
 
 function getPost() {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "service/posts.json",
         data: {
             "id": "id"
@@ -88,14 +88,16 @@ function getPost() {
             } else {
                 var jsonData = JSON.stringify(result);
                 var arr = JSON.parse(jsonData);
+                var postId = getUrlParameter("p");
+                postId = postId.substr(0, postId.indexOf('/'));
                 for (i = 0; i < arr.length; i++) {
-                    if (getUrlParameter("p").substring(0, 2) == arr[i].id) {
+                    if (postId == arr[i].id) {
                         $(".post-content").html(arr[i].content_full);
                         $(".post-title").html(arr[i].title);
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
 
                     }
-                }
+                } 
             }
 
         },
@@ -122,24 +124,19 @@ function convert($time) {
 
     //farkın üzerinden ne kadar zaman geçtiğini bulma
     if ($sn < 60) {
-        return $sn+" saniye önce";
-    }
-    else if($dk < 60) {
-        return $dk+" dakika önce";
-    }
-    else if($saat < 24) {
-        return $saat+" saat önce";
-    }
-    else if($gun < 7) {
-        return $gun+" gün önce";
-    }
-    else if($hafta < 4) {
-        return $hafta+" hafta önce";
-    }
-    else if($ay < 12) {
-        return $ay+" ay önce";
+        return $sn + " saniye önce";
+    } else if ($dk < 60) {
+        return $dk + " dakika önce";
+    } else if ($saat < 24) {
+        return $saat + " saat önce";
+    } else if ($gun < 7) {
+        return $gun + " gün önce";
+    } else if ($hafta < 4) {
+        return $hafta + " hafta önce";
+    } else if ($ay < 12) {
+        return $ay + " ay önce";
     } else {
-        return $yil+" yıl önce";
+        return $yil + " yıl önce";
     }
 }
 
@@ -154,5 +151,4 @@ function callFunctions() {
     totalPostPage();
 
     getPost();
-
 }
