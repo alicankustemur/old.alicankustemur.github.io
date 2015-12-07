@@ -31,3 +31,7 @@ body{
   text-decoration: none;
   z-index: 1;
 }
+
+.post{
+	margin-bottom: 10px;
+}
