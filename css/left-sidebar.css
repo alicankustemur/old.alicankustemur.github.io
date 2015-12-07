@@ -23,7 +23,7 @@ i.text{
 }
 
 a.icon-link:link , a.icon-link:active , a.icon-link:visited {
-  color:white;
+  color:#ffffff;
   text-decoration: none;
 }
 
@@ -98,7 +98,7 @@ animation: 24s ease infinite;
     50%{background-position:100% 33%}
     100%{background-position:0% 68%}
 }
-color:white;
+ color:#ffffff;
 }
 
 .left-sidebar{
