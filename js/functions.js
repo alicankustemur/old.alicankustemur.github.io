@@ -117,12 +117,12 @@ function convert($time) {
     //farkın ne kadar süre yaptığını hesaplama
     $sn = $fark;
     $dk = Math.round($fark / 60);
-    $saat = Math.round($fark / 60 * 60);
-    $gun = Math.round($fark / 60 * 60 * 24);
-    $hafta = Math.round($fark / 60 * 60 * 24 * 7);
-    $ay = Math.round($fark / 60 * 60 * 24 * 7 * 4);
-    $yil = Math.round($fark / 60 * 60 * 24 * 7 * 4 * 12);
-
+    $saat = Math.round($fark / 60 / 60);
+    $gun = Math.round($fark / 60 / 60 / 24);
+    $hafta = Math.round($fark / 60 / 60 / 24 / 7);
+    $ay = Math.round($fark / 60 / 60 / 24 / 7 / 4);
+    $yil = Math.round($fark / 60 / 60 / 24 / 7 / 4 / 12);
+    
     //farkın üzerinden ne kadar zaman geçtiğini bulma
     if ($sn < 60) {
         return $sn + " saniye önce";
