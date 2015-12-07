@@ -1,106 +1,133 @@
 /* contact icons */
 
-i.icons
-{
-  font-size: 1.6em;
-  width: 1.6em;
-  text-align: center;
-  line-height: 1.6em;
-  background: #222222;
-  color: #fff;
-  border-radius: 0.8em;
-  position: relative;
-  left: 15px;
-}
-i.text{
-  font-size: 1em;
-  text-align: center;
-  line-height: 1.1em;
-  font-style: normal;
-  position: relative;
-  top: -5px;
-  left: 15px;
+i.icons {
+    font-size: 1.6em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    background: #222222;
+    color: #fff;
+    border-radius: 0.8em;
+    position: relative;
+    left: 15px;
 }
 
-a.icon-link:link , a.icon-link:active , a.icon-link:visited {
-  color:#ffffff;
-  text-decoration: none;
+i.text {
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.1em;
+    font-style: normal;
+    position: relative;
+    top: -5px;
+    left: 15px;
 }
 
-a > .top5:hover{
-  background-color: #ae3910;
+a.icon-link:link, a.icon-link:active, a.icon-link:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a > .top5:hover {
+    background-color: #ae3910;
 }
 
 .left-sidebar {
--webkit-box-shadow: 6px -5px 26px -4px rgba(0,0,0,0.75);
--moz-box-shadow: 6px -5px 26px -4px rgba(0,0,0,0.75);
-box-shadow: 6px -5px 26px -4px rgba(0,0,0,0.75);
-height: -moz-calc(100% - 100px); /* Firefox */
- height: -webkit-calc(100% - 100px); /* Chrome, Safari */
- height: calc(100% - 100px); /* IE9+ and future browsers */
+    -webkit-box-shadow: 6px -5px 26px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px -5px 26px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px -5px 26px -4px rgba(0, 0, 0, 0.75);
+    height: -moz-calc(100% - 100px);
+    /* Firefox */
+    height: -webkit-calc(100% - 100px);
+    /* Chrome, Safari */
+    height: calc(100% - 100px);
+    /* IE9+ and future browsers */
 }
 
-.progress-bar-label{
-  position: relative;
-  top: -7px;
-  text-align: center;
+.progress-bar-label {
+    position: relative;
+    top: -7px;
+    text-align: center;
 }
 
-div.left-sidebar1{
-
-    /* IE10+ */ 
-  background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
-
-  /* Mozilla Firefox */ 
-  background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
-
-  /* Opera */ 
-  background-image: -o-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
-
-  /* Webkit (Safari/Chrome 10) */ 
-  background-image: -webkit-gradient(radial, left top, 0, left top, 572, color-stop(0, #DD4814), color-stop(100, #F59331));
-
-  /* Webkit (Chrome 11+) */ 
-  background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
-
-  /* W3C Markup */ 
-  background-image: radial-gradient(ellipse farthest-corner at left top, #DD4814 0%, #F59331 100%);
-  
-  color: white;
-}
-div.left-sidebar{
-  
-background: linear-gradient(23deg, #e0a621, #eb2f09);
-background-size: 400% 400%;
-
--webkit-animation: 24s ease infinite;
--moz-animation: 24s ease infinite;
--o-animation: 24s ease infinite;
-animation: 24s ease infinite;
-
-@-webkit-keyframes {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@-moz-keyframes {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@-o-keyframes {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@keyframes { 
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
- color:#ffffff;
+div.left-sidebar {
+    /* IE10+ */
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
+    /* Opera */
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, left top, 0, left top, 572, color-stop(0, #DD4814), color-stop(100, #F59331));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #DD4814 0%, #F59331 100%);
+    /* W3C Markup */
+    background-image: radial-gradient(ellipse farthest-corner at left top, #DD4814 0%, #F59331 100%);
+    color: #ffffff;
 }
 
-.left-sidebar{
-  min-height:100%;
+div.left-sidebar {
+    background: linear-gradient(23deg, #e0a621, #eb2f09);
+    background-size: 400% 400%;
+    -webkit-animation: 24s ease infinite;
+    -moz-animation: 24s ease infinite;
+    -o-animation: 24s ease infinite;
+    animation: 24s ease infinite;
+    @-webkit-keyframes {
+        0% {
+            background-position: 0% 68%
+        }
+        50% {
+            background-position: 100% 33%
+        }
+        100% {
+            background-position: 0% 68%
+        }
+    }
+    @-moz-keyframes {
+        0% {
+            background-position: 0% 68%
+        }
+        50% {
+            background-position: 100% 33%
+        }
+        100% {
+            background-position: 0% 68%
+        }
+    }
+    @-o-keyframes {
+        0% {
+            background-position: 0% 68%
+        }
+        50% {
+            background-position: 100% 33%
+        }
+        100% {
+            background-position: 0% 68%
+        }
+    }
+    @keyframes {
+        0% {
+            background-position: 0% 68%
+        }
+        50% {
+            background-position: 100% 33%
+        }
+        100% {
+            background-position: 0% 68%
+        }
+    }
+    color: #ffffff;
+}
+
+.left-sidebar {
+    min-height: 100%;
+}
+
+.left-sidebar > h5 {
+    color:#222222;
+    font-weight:bold;
+}
+
+.left-sidebar > .about {
+    color: #fff;
 }
