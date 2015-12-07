@@ -1,6 +1,5 @@
 
 
-
     <!DOCTYPE html>
 <html lang="tr">
   <head>
@@ -16,6 +15,7 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="plugins/syntaxhighlighter_3.0.83/styles/shCoreDefault.css">
+    <link rel="stylesheet" href="plugins/lightbox2-master/dist/css/lightbox.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,7 +36,7 @@
    <hr class="soften">
    
    <h5>hakkımda</h5>
-   <p style="text-transform: lowercase;" class="about">93 Mersin doğumlu , çocukluğunu bilgisayar oyunlarına ve gençliğini bilgisayar programlarına adamış bir programcı.Önceleri Müzik Prodüktörlüğü ile uğraşıp , bir eğitim seti oluşturan ve Türkiye'nin birçok iline 100'lerce DVD gönderen emektar. Artık sadece kodların notalarını çalmak istiyor.</p>
+   <p style="text-transform:lowercase; about">93 Mersin doğumlu , çocukluğunu bilgisayar oyunlarına ve gençliğini bilgisayar programlarına adamış bir programcı.Önceleri Müzik Prodüktörlüğü ile uğraşıp , bir eğitim seti oluşturan ve Türkiye'nin birçok iline 100'lerce DVD gönderen emektar. Artık sadece kodların notalarını çalmak istiyor.</p>
    
    <hr class="soften">
    
@@ -161,7 +161,46 @@
          </div>
       </div>
    </div>
-   
+    <div class="row">
+      <div class="col-lg-3 progress-bar-label">java</div>
+      <div class="col-lg-9">
+         <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-lg-3 progress-bar-label">java</div>
+      <div class="col-lg-9">
+         <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-lg-3 progress-bar-label">java</div>
+      <div class="col-lg-9">
+         <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-lg-3 progress-bar-label">java</div>
+      <div class="col-lg-9">
+         <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-lg-3 progress-bar-label">java</div>
+      <div class="col-lg-9">
+         <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+         </div>
+      </div>
+   </div>
 
 </div>
    <!-- Left Sidebar End -->    
@@ -234,11 +273,13 @@
 </nav>
 <!-- Navbar End -->
 
-   
-    <div class="col-lg-9 content"></div>
-    <div class="col-lg-9 post-pagination"></div>
+    
 
+    <div class="col-lg-9 content">
+    </div>
+      
 
+    <div class="col-lg-12 post-pagination"></div>
   
   <a class="to-top">Yukarı &uarr;</a>
 <footer class="footer-distributed col-lg-12">
@@ -276,6 +317,8 @@
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/pagejump.js"></script>
 <script type="text/javascript" src="js/back-to-top.js"></script>
+<script type="text/javascript" src="plugins/animsition/dist/js/animsition.min.js"></script>
+<script type="text/javascript" src="plugins/lightbox2-master/dist/js/lightbox.min.js"></script>
 <script type="text/javascript" src="plugins/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
 <script type="text/javascript" src="plugins/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>
 <script type="text/javascript" src="plugins/syntaxhighlighter_3.0.83/scripts/shBrushSql.js"></script>
@@ -294,10 +337,12 @@
         //,href: "#page={{number}}"
     }).on("page", function(event, num) {
         getPagination(num);
+
     });
 
-    
      callFunctions();
+
 </script>
 </body>
 </html>
+  
