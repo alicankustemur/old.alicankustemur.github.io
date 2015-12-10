@@ -29,7 +29,7 @@ function totalPostPage() {
 
         $('.post-pagination').bootpag({
             total: $pageCount,
-            maxVisible: 10
+            maxVisible: 7
         });
 
     });
