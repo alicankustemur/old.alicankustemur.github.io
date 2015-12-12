@@ -140,14 +140,6 @@ function convert($time) {
         return $yil + " yıl önce";
     }
 }
-
-function syntaxHightlighter(){
-    SyntaxHighlighter.config.bloggerMode = true;
-    SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
-}
-
 function callFunctions() {
     //pagination size
     setInterval(paginationSize, 1000);
@@ -158,7 +150,5 @@ function callFunctions() {
     //page count
     totalPostPage();
 
-    getPost();
-
-    syntaxHightlighter();    
+    getPost(); 
 }
