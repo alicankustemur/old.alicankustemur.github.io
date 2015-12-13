@@ -5,7 +5,15 @@
 @import url(pagination.css);
 @import url(horizontal-scroll.css);
 @import url(search-autocomplete.css);
+
+/* jquery autocomplete */
 @import url(http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css);
+
+.ui-autocomplete{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+
 @import url(plugins/lightbox2-master/dist/css/lightbox.css);
 
 /* syntaxhighlighter */
