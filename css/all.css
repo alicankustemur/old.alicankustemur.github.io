@@ -3,6 +3,7 @@
 @import url(hr.soften.css);
 @import url(footer-distributed.css);
 @import url(pagination.css);
+@import url(horizontal-scroll.css);
 
 body{
   font-family: 'Ubuntu', sans-serif;
