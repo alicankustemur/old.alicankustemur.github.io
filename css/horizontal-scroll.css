@@ -3,7 +3,7 @@
 	border-top: none;
 	border-right:none; 
 	font-style: italic;
-	padding: 0 0 0 80px;
+	padding: 0 0 0 45px;
 	box-shadow: 0 2px 5px -3px #000;
 	position: relative;
 	top: -21px;
@@ -31,4 +31,12 @@
 .horizontalScroll ul li {
 	list-style: none;
 	padding: 10px 0;
+}
+
+.horizontalScroll li a {
+
+	text-decoration: none;
+}
+.horizontalScroll li a:hover {
+	color:#333333;
 }
