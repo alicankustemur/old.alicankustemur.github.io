@@ -15,11 +15,6 @@
 
 
 @import url(plugins/lightbox2-master/dist/css/lightbox.css);
-
-/* syntaxhighlighter */
-@import url(http://alexgorbatchev.com/pub/sh/current/styles/shCore.css);
-@import url(http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css);
-
 /*
 body{
   font-family: 'Ubuntu', sans-serif;
