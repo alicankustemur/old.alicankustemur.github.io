@@ -20,9 +20,11 @@
 @import url(http://alexgorbatchev.com/pub/sh/current/styles/shCore.css);
 @import url(http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css);
 
+/*
 body{
   font-family: 'Ubuntu', sans-serif;
 }
+*/
 .center {
 	text-align: center;
 }

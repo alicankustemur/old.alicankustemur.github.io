@@ -194,6 +194,48 @@ function getAutoComplete(){
 
 }
 
+function getTheme(){
+ var themeNames = [ 
+                     "cosmo",
+                     "cerulean" ,
+                     "custom" ,
+                     "cyborg",
+                     "darkly",
+                     "flatly",
+                     "journal",
+                     "lumen",
+                     "paper",
+                     "readable",
+                     "sandstone",
+                     "simplex",
+                     "slate",
+                     "spacelab",
+                     "superhero",
+                     "united",
+                     "yeti" 
+                ];
+
+            for(var i=0 ; i < themeNames.length; i++){
+                $(".theme-dropdown").append('<li><a href="?theme='+ themeNames[i] +'" class="'+ themeNames[i] +'">'+ themeNames[i] +'</a></li>');
+
+            }
+
+             $(".paper").click(function(){
+                  $(".theme").html('<link rel="stylesheet" href="template/'+ getUrlParameter("theme") +'/bootstrap.min.css">"');
+                });
+
+             if(!getUrlParameter("theme")){
+                $(".theme").html('<link rel="stylesheet" href="template/cosmo/bootstrap.min.css">');
+             }else{
+                $(".theme").html('<link rel="stylesheet" href="template/'+ getUrlParameter("theme") +'/bootstrap.min.css">');
+             }
+               
+
+
+           
+
+}
+
 
 function callFunctions() {
     //pagination size
@@ -219,5 +261,8 @@ function callFunctions() {
     setInterval(horizontalScroll, 5000);
 
     getAutoComplete();
+
+
+
 
 }
