@@ -4,6 +4,13 @@
 @import url(footer-distributed.css);
 @import url(pagination.css);
 @import url(horizontal-scroll.css);
+@import url(search-autocomplete.css);
+@import url(http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css);
+@import url(plugins/lightbox2-master/dist/css/lightbox.css);
+
+/* syntaxhighlighter */
+@import url(http://alexgorbatchev.com/pub/sh/current/styles/shCore.css);
+@import url(http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css);
 
 body{
   font-family: 'Ubuntu', sans-serif;

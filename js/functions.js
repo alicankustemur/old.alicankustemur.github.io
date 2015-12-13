@@ -162,10 +162,34 @@ function horizontalScroll() {
             i++;
              if(parseInt(data[i].id) == rand && i < data.length){
 
-            $(".horizontalScroll > ul").append('<li><a href="post_page.php?p=' + data[i].id + '/' + data[i].link + '">' + data[i].title + '</a></li>');
+            $(".horizontalScroll > ul").append('<li><a href="post_page.html?p=' + data[i].id + '/' + data[i].link + '">' + data[i].title + '</a></li>');
             $(".horizontalScroll").show();
             }
         }        
+    });
+
+}
+
+function getAutoComplete(){
+
+    var url = 'service/posts.json';
+    var source = [];
+    $.getJSON(url, function(data) {
+
+        for(var i = 0 ; i < data.length ; i++){
+            source.push({
+                label:data[i].title,
+                the_link:'post_page.html?p=' + data[i].id + '/' + data[i].link
+            });
+        }
+
+    });
+
+    $( ".search" ).autocomplete({
+      source: source,
+      select:function(e,ui) { 
+      location.href = ui.item.the_link;
+  }
     });
 
 }
@@ -193,5 +217,7 @@ function callFunctions() {
         interval:5000
         })
     setInterval(horizontalScroll, 5000);
+
+    getAutoComplete();
 
 }
