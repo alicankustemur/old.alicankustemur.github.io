@@ -119,9 +119,10 @@ div.left-sidebar {
     color: #ffffff;
 }
 
-.left-sidebar {
+.left-sidebar  {
     min-height: 100%;
 }
+
 
 .left-sidebar > h5 {
     color:#222222;
@@ -131,3 +132,14 @@ div.left-sidebar {
 .left-sidebar > .about {
     color: #fff;
 }
+
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .pagination{
+        position: relative;
+        bottom: 0px;
+    }
+    
+}
+
