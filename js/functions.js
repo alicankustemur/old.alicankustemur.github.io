@@ -230,11 +230,9 @@ function getTheme(){
                 $(".theme").html('<link rel="stylesheet" href="template/'+ getUrlParameter("theme") +'/bootstrap.min.css">');
              }
                
-
-
-           
-
 }
+
+
 
 
 function callFunctions() {
@@ -262,7 +260,6 @@ function callFunctions() {
 
     getAutoComplete();
 
-
-
+    newFeatures();
 
 }
