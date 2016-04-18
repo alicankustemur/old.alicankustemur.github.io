@@ -260,6 +260,5 @@ function callFunctions() {
 
     getAutoComplete();
 
-    newFeatures();
 
 }
