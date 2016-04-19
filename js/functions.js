@@ -97,10 +97,14 @@ function getPost() {
                         $(".post-title").html(arr[i].title);
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
 
-                    }else{
+                    }else if(postId != arr[i].id){
                         $(".post-content").html("Aradığınız içerik kaldırılmıştır.");
-                        $(".post-title").html("Aradığınız içerik kaldırılmıştır.");
+                        $(".post-title").html("<b>404</b> Bir hata oluştu.");
                         $(".post-date").html("");
+                        // setInterval(function(){
+                        //     location.href='http://alicankustemur.github.io';
+                        // }, 4000);
+
                     }
                 } 
             }
