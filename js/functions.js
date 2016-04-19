@@ -91,18 +91,30 @@ function getPost() {
                 var arr = JSON.parse(jsonData);
                 var postId = getUrlParameter("p");
                 postId = postId.substr(0, postId.indexOf('/'));
+                $count = 0;
                 for (i = 0; i < arr.length; i++) {
                     if (postId == arr[i].id) {
                         $("title").html(arr[i].title +" - ali can kuştemur | bir programcının hayal dünyası");
                         $(".post-content").html(arr[i].content_full);
                         $(".post-title").html(arr[i].title);
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
-
-                    }else if(postId != arr[i].id){
+                        $count++;
+                    }else if(i == ( arr.length - 1 ) && $count < 1){
                         $("title").html("404 Bir hata oluştu.");
                         $(".post-content").html("Aradığınız içerik kaldırılmıştır.");
                         $(".post-title").html("<b>404</b> Bir hata oluştu.");
                         $(".post-date").html("");
+                        $i = 6 ;
+                        setInterval(function(){
+                            $i--;
+                            $(".post-content").html("Aradığınız içerik kaldırılmıştır. <br /> Anasayfaya yönlendiriliyorsunuz... "+$i);
+                            if($i == 1){
+                                location.href = "http://alicankustemur.github.io";
+                            }
+                        },1000);
+                        
+                        break;
+
                         // setInterval(function(){
                         //     location.href='http://alicankustemur.github.io';
                         // }, 4000);
