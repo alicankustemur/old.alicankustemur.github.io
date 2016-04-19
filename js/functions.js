@@ -93,11 +93,13 @@ function getPost() {
                 postId = postId.substr(0, postId.indexOf('/'));
                 for (i = 0; i < arr.length; i++) {
                     if (postId == arr[i].id) {
+                        $("title").html(arr[i].title +" - ali can kuştemur | bir programcının hayal dünyası");
                         $(".post-content").html(arr[i].content_full);
                         $(".post-title").html(arr[i].title);
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
 
                     }else if(postId != arr[i].id){
+                        $("title").html("404 Bir hata oluştu.");
                         $(".post-content").html("Aradığınız içerik kaldırılmıştır.");
                         $(".post-title").html("<b>404</b> Bir hata oluştu.");
                         $(".post-date").html("");
