@@ -38,6 +38,9 @@ function totalPostPage() {
 
 
 function getPagination(num) {
+    
+    //if(location.pathname != "/alicankustemur.github.io/tags.html" || location.pathname != "/alicankustemur.github.io/tags.html"){
+
     var url = 'service/posts.json';
     var page = [];
     $.getJSON(url, function(data) {
@@ -71,6 +74,7 @@ function getPagination(num) {
 
     });
 
+    //}
 }
 
 
@@ -257,6 +261,7 @@ function getTheme(){
 
 
 
+
 function callFunctions() {
     //pagination size
     setInterval(paginationSize, 1000);
@@ -282,5 +287,5 @@ function callFunctions() {
 
     getAutoComplete();
 
-
+    alert(location.pathname);
 }
