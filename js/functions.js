@@ -101,13 +101,13 @@ function getPost() {
                         $count++;
                     }else if(i == ( arr.length - 1 ) && $count < 1){
                         $("title").html("404 Bir hata oluştu.");
-                        $(".post-content").html("Aradığınız içerik kaldırılmıştır.");
+                        $(".post-content").html("Aradığınız içerik bulunamamıştır.");
                         $(".post-title").html("<b>404</b> Bir hata oluştu.");
                         $(".post-date").html("");
                         $i = 6 ;
                         setInterval(function(){
                             $i--;
-                            $(".post-content").html("Aradığınız içerik kaldırılmıştır. <br /> Anasayfaya yönlendiriliyorsunuz... "+$i);
+                            $(".post-content").html("Aradığınız içerik bulunamamıştır. <br /> Anasayfaya yönlendiriliyorsunuz... "+$i);
                             if($i == 1){
                                 location.href = "http://alicankustemur.github.io";
                             }
