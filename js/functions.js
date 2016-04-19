@@ -259,22 +259,29 @@ function getTheme(){
 }
 
 
+function index(){
+    if(location.pathname == "/"){
+        getPagination(1);
+        totalPostPage();
+        setInterval(paginationSize, 1000);
+    }
+}
+
+function post_page(){
+    if(location.pathname == "/post_page.html"){
+        getPost();
+        syntaxHightlighter();
+    }
+}
 
 
 
 function callFunctions() {
-    //pagination size
-    setInterval(paginationSize, 1000);
+    
 
-    //default num 1
-    getPagination(1);
+    index();
 
-    //page count
-    totalPostPage();
-
-    getPost();
-
-    syntaxHightlighter();
+    post_page();
 
 
     $(".horizontalScroll").hide();
@@ -287,5 +294,4 @@ function callFunctions() {
 
     getAutoComplete();
 
-    alert(location.pathname);
 }
