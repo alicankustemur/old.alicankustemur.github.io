@@ -97,6 +97,10 @@ function getPost() {
                         $(".post-title").html(arr[i].title);
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
 
+                    }else{
+                        $(".post-content").html("Aradığınız içerik kaldırılmıştır.");
+                        $(".post-title").html("Aradığınız içerik kaldırılmıştır.");
+                        $(".post-date").html("");
                     }
                 } 
             }
