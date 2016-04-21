@@ -217,7 +217,7 @@ function getAutoComplete(){
           if(event.which == 13 || event.keyCode == 13){
             $search = $(".search").val();
             location.href="tags.html?search="+$search;
-            alert(true);
+            alert("girilen değer aranıyor..");
           }
 
     });
