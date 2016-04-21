@@ -293,6 +293,13 @@ function index(){
         getPagination(1);
         totalPostPage();
         setInterval(paginationSize, 1000);
+        $(".horizontalScroll").hide();
+        horizontalScroll();
+        $('.horizontalScroll').easyTicker({
+            visible: 1,
+            interval:5000
+            })
+        setInterval(horizontalScroll, 5000);
     }
 }
 
@@ -318,14 +325,6 @@ function callFunctions() {
     post_page();
     tags();
     
-
-    $(".horizontalScroll").hide();
-    horizontalScroll();
-    $('.horizontalScroll').easyTicker({
-        visible: 1,
-        interval:5000
-        })
-    setInterval(horizontalScroll, 5000);
 
     getAutoComplete();
 
