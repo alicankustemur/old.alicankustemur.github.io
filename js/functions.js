@@ -1,4 +1,4 @@
-    function getUrlParameter(sParam) {
+function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
@@ -9,7 +9,7 @@
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
-};
+}
 
 function paginationSize() {
     if (window.matchMedia('(max-width: 480px)').matches || window.matchMedia('(max-width: 767px)').matches) {
@@ -76,7 +76,6 @@ function getPagination(num) {
 
     //}
 }
-
 
 
 function getPost() {
@@ -258,9 +257,21 @@ function getTheme(){
                
 }
 
+function findPostByTag(){
+     var url = 'service/posts.json';
+    $.getJSON(url, function(data) {
+
+        for(var i = 0 ; i < data.length; i++){
+            alert(data[i].tags);
+        }
+
+    });
+
+}
+
 
 function index(){
-    if(location.pathname == "/"){
+    if(location.pathname == "/alicankustemur.github.io/"){
         getPagination(1);
         totalPostPage();
         setInterval(paginationSize, 1000);
@@ -283,6 +294,7 @@ function callFunctions() {
 
     post_page();
 
+    findPostByTag();
 
     $(".horizontalScroll").hide();
     horizontalScroll();
