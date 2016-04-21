@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll1.css">
     <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css">
-    <link rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+    <link rel="stylesheet" href="css/syntaxhighlighter/shCore.css">
+    <link rel="stylesheet" href="css/syntaxhighlighter/shThemeDefault.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -228,9 +228,6 @@
         <!-- Blog Post -->
         <!-- Title -->
         <h2 class="post-title"></h2>
-        <hr>
-        <!-- Date/Time -->
-        <p class="post-date"><span class="fa fa-clock-o"></span> </p>
         <!-- Preview Image -->
         <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt="" height="150" width="500" style="text-align:center" > !-->
         <!-- Post Content -->
@@ -240,7 +237,7 @@
                 
                 <form  action="update-page.php"  role="form" id="post-listesi" class="form-horizontal" method="POST">
                   <fieldset>
-                    <legend>post listesi</legend>
+                    <legend class="searchResult" ></legend>
                   </fieldset>
                   <div class="table-responsive" style="overflow-x:auto;">
                             <table class="table">

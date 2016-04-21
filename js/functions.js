@@ -217,6 +217,7 @@ function getAutoComplete(){
           if(event.which == 13 || event.keyCode == 13){
             $search = $(".search").val();
             location.href="tags.html?search="+$search;
+            alert(true);
           }
 
     });
@@ -263,18 +264,22 @@ function getTheme(){
 
 function findPostByTag(tag){
      var url = 'service/posts.json';
-
+        $(".searchResult").html(tag + " ile ilgili tüm sonuçlar;");
         $.getJSON(url, function(data) {
 
+            $found = 0;
             for(var i = 0 ; i < data.length; i++){
-
                 $tags = data[i].tags.split(",");
                 $.each($tags , function(key,value){
                     value = value.replace(/\s/g, '').toLowerCase();
                     if(tag == value ){
                         $(".table > tbody").append("<tr><td class=\"rowTitle\"><a href=\"post_page.html?p="+ data[i].id + "/"+ data[i].link +"\">"+ data[i].title +"</a></td></tr>\n");
+                        $found++;
                     }
-                });
+                  });
+            }
+            if($found == 0){
+                    $(".table-responsive").html(tag+" ilgili hiçbir sonuç bulunamamıştır.");
             }
 
         });
