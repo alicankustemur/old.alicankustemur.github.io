@@ -162,7 +162,7 @@ function convert($time) {
     }
 }
 
-function syntaxHightlighter(){
+function syntaxHighlighter(){
     SyntaxHighlighter.config.bloggerMode = true;
     SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
     SyntaxHighlighter.defaults['toolbar'] = false;
@@ -306,7 +306,8 @@ function index(){
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         getPost();
-        syntaxHightlighter();
+        syntaxHighlighter();
+        setInterval(syntaxHighlighter,2000);
     }
 }
 
