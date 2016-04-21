@@ -262,7 +262,7 @@ function findPostByTag(){
     $.getJSON(url, function(data) {
 
         for(var i = 0 ; i < data.length; i++){
-            alert(data[i].tags);
+            //alert(data[i].tags);
         }
 
     });
@@ -271,7 +271,7 @@ function findPostByTag(){
 
 
 function index(){
-    if(location.pathname == "/alicankustemur.github.io/"){
+    if(location.pathname == "/"){
         getPagination(1);
         totalPostPage();
         setInterval(paginationSize, 1000);
