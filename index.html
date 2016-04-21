@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <div class="theme">
         <link rel="stylesheet" href="template/cosmo/bootstrap.min.css" </div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll1.css">
+        <link rel="stylesheet" href="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll.css">
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/syntaxhighlighter/shCore.css">
         <link rel="stylesheet" href="css/syntaxhighlighter/shThemeDefault.css">
@@ -28,10 +29,9 @@
         </style>
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script>
-            $(document).ready(function(){
-                $(".left-sidebar").load("fragments/left-sidebar.html");
-                $(".navbar").load("fragments/navbar.html");
-            });
+        $(document).ready(function() {
+            $(".left-sidebar").load("fragments/left-sidebar.html");
+        });
         </script>
 </head>
 
@@ -39,9 +39,83 @@
     <!-- Left Sidebar Start -->
     <div class="col-lg-3 col-sm-3 left-sidebar fill" style="font-size:13px;"></div>
     <!-- Left Sidebar End -->
-    
     <!-- Navbar Start -->
-    <nav class="navbar navbar-default col-lg-9"></nav>
+    <nav class="navbar navbar-default col-lg-9">
+        <!DOCTYPE html>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://whoismrrobot.com">~ whoismrrobot</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://alicankustemur.github.io">ana sayfa</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown dropdown-slider mega-dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">programlama<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-slider mega-dropdown-menu mega-dropdown-menu-body">
+                            <li class="col-lg-2">
+                                <ul>
+                                    <li class="dropdown-header">java</li>
+                                    <li><a href="tags.html?search=javase">java se</a></li>
+                                    <li><a href="tags.html?search=servletjsp">servlet & jsp</a></li>
+                                    <li><a href="tags.html?search=jsf">javaserver faces</a></li>
+                                    <li><a href="tags.html?search=primefaces">primefaces</a></li>
+                                    <li><a href="tags.html?search=spring">spring framework</a></li>
+                                    <li><a href="tags.html?search=hibernatejpa">hibernate / jpa</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-lg-2">
+                                <ul>
+                                    <li class="dropdown-header">diğer</li>
+                                    <li><a href="tags.html?search=php">php</a></li>
+                                    <li><a href="tags.html?search=jquery">jquery</a></li>
+                                    <li><a href="tags.html?search=bootstrap">bootstrap</a></li>
+                                    <li><a href="tags.html?search=linux">linux</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">arşivler <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">hayata dair</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="birseyler-karala.php">birşeyler karala</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle theme-button" data-toggle="dropdown" role="button" aria-expanded="false">tema <span class="caret"></span></a>
+                        <ul class="dropdown-menu theme-dropdown" role="menu">
+                            <li><a href="#default" class="default">varsayılan</a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm search" placeholder="Ara" name="search">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
     <!-- Navbar End -->
     <div class="horizontalScroll col-lg-9">
         <ul></ul>
@@ -69,40 +143,40 @@
             </p>
             <p>ali can kuştemur ~ copyleft while( !© ){ hiçbir hakkı saklı değildir,bilgi paylaştıkça çoğalır. }</p>
         </div>
-    <!-- JavaScripts -->
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript" src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/mega-dropdown-menu.js"></script>
-    <script type="text/javascript" src="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll.min.js"></script>
-    <script type="text/javascript" src="plugins/jquery-simplyscroll-2.0.X/random-scroll.js"></script>
-    <script type="text/javascript" src="js/jquery.bootpag.min.js"></script>
-    <script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/jquery.form.validation.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/pagejump.js"></script>
-    <script type="text/javascript" src="js/back-to-top.js"></script>
-    <script type="text/javascript" src="plugins/animsition/dist/js/animsition.min.js"></script>
-    <script type="text/javascript" src="plugins/lightbox2-master/dist/js/lightbox.min.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter/shBrushJava.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter/shBrushSql.js"></script>
-    <script type="text/javascript" src="plugins/jquery-easy-ticker-master/jquery.easy-ticker.min.js"></script>
-    <script type="text/javascript" src="plugins/jquery-easy-ticker-master/test/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="js/jquery.collapse.js"></script>
-    <script type="text/javascript">
-    callFunctions();
-    $('.post-pagination').bootpag({
-        total: 3,
-        wrapClass: "pagination"
-            //,href: "#page={{number}}"
-    }).on("page", function(event, num) {
-        getPagination(num);
+        <!-- JavaScripts -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mega-dropdown-menu.js"></script>
+        <script type="text/javascript" src="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery-simplyscroll-2.0.X/random-scroll.js"></script>
+        <script type="text/javascript" src="js/jquery.bootpag.min.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/jquery.form.validation.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/pagejump.js"></script>
+        <script type="text/javascript" src="js/back-to-top.js"></script>
+        <script type="text/javascript" src="plugins/animsition/dist/js/animsition.min.js"></script>
+        <script type="text/javascript" src="plugins/lightbox2-master/dist/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="js/syntaxhighlighter/shBrushJava.js"></script>
+        <script type="text/javascript" src="js/syntaxhighlighter/shBrushSql.js"></script>
+        <script type="text/javascript" src="plugins/jquery-easy-ticker-master/jquery.easy-ticker.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery-easy-ticker-master/test/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="js/jquery.collapse.js"></script>
+        <script type="text/javascript">
+        callFunctions();
+        $('.post-pagination').bootpag({
+            total: 3,
+            wrapClass: "pagination"
+                //,href: "#page={{number}}"
+        }).on("page", function(event, num) {
+            getPagination(num);
 
-    });
-    </script>
+        });
+        </script>
     </footer>
-    
 </body>
 
 </html>

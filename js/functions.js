@@ -329,6 +329,4 @@ function callFunctions() {
     getAutoComplete();
 
 
-    
-
 }
