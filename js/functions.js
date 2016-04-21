@@ -118,10 +118,6 @@ function getPost() {
                         
                         break;
 
-                        // setInterval(function(){
-                        //     location.href='http://alicankustemur.github.io';
-                        // }, 4000);
-
                     }
                 } 
             }
@@ -213,8 +209,17 @@ function getAutoComplete(){
     $( ".search" ).autocomplete({
       source: source,
       select:function(e,ui) { 
-      location.href = ui.item.the_link;
-  }
+        location.href = ui.item.the_link;
+      }
+    });
+
+    $('.search').keypress(function(event){
+          if(event.which == 13 || event.keyCode == 13){
+            $search = $(".search").val();
+            location.href="tags.html?search="+$search;
+            alert($search);
+          }
+
     });
 
 }
@@ -257,21 +262,30 @@ function getTheme(){
                
 }
 
-function findPostByTag(){
+function findPostByTag(tag){
      var url = 'service/posts.json';
-    $.getJSON(url, function(data) {
 
-        for(var i = 0 ; i < data.length; i++){
-            //alert(data[i].tags);
-        }
+        $.getJSON(url, function(data) {
 
-    });
+            for(var i = 0 ; i < data.length; i++){
+
+                $tags = data[i].tags.split(",");
+                $.each($tags , function(key,value){
+                    value = value.replace(/\s/g, '').toLowerCase();
+                    if(tag == value ){
+                        $(".table > tbody").append("<tr><td class=\"rowTitle\"><a href=\"post_page.html?p="+ data[i].id + "/"+ data[i].link +"\">"+ data[i].title +"</a></td></tr>\n");
+                    }
+                });
+            }
+
+        });
 
 }
 
+const blogUrl = "/alicankustemur.github.io/"; 
 
 function index(){
-    if(location.pathname == "/"){
+    if(location.pathname == "/" || location.pathname == blogUrl){
         getPagination(1);
         totalPostPage();
         setInterval(paginationSize, 1000);
@@ -279,22 +293,27 @@ function index(){
 }
 
 function post_page(){
-    if(location.pathname == "/post_page.html"){
+    if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         getPost();
         syntaxHightlighter();
+    }
+}
+
+function tags(){
+    if(location.pathname == "/tags.html" || location.pathname == blogUrl + "tags.html"){
+        findPostByTag(getUrlParameter("search")); 
+        getPagination(1);   
     }
 }
 
 
 
 function callFunctions() {
-    
 
     index();
-
     post_page();
-
-    findPostByTag();
+    tags();
+    
 
     $(".horizontalScroll").hide();
     horizontalScroll();
@@ -305,5 +324,8 @@ function callFunctions() {
     setInterval(horizontalScroll, 5000);
 
     getAutoComplete();
+
+
+    
 
 }

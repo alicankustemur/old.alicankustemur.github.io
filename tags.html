@@ -177,21 +177,21 @@
                             <li class="col-lg-2">
                                 <ul>
                                     <li class="dropdown-header">java</li>
-                                    <li><a href="#">java se</a></li>
-                                    <li><a href="">servlet & jsp</a></li>
-                                    <li><a href="#">javaserver faces</a></li>
-                                    <li><a href="#">primefaces</a></li>
-                                    <li><a href="">spring framework</a></li>
-                                    <li><a href="">hibernate / jpa</a></li>
+                                    <li><a href="tags.html?search=javase">java se</a></li>
+                                    <li><a href="tags.html?search=servletjsp">servlet & jsp</a></li>
+                                    <li><a href="tags.html?search=jsf">javaserver faces</a></li>
+                                    <li><a href="tags.html?search=primefaces">primefaces</a></li>
+                                    <li><a href="tags.html?search=spring">spring framework</a></li>
+                                    <li><a href="tags.html?search=hibernatejpa">hibernate / jpa</a></li>
                                 </ul>
                             </li>
                             <li class="col-lg-2">
                                 <ul>
                                     <li class="dropdown-header">diğer</li>
-                                    <li><a href="#">php</a></li>
-                                    <li><a href="#">jquery</a></li>
-                                    <li><a href="#">bootstrap</a></li>
-                                    <li><a href="">linux</a></li>
+                                    <li><a href="tags.html?search=php">php</a></li>
+                                    <li><a href="tags.html?search=jquery">jquery</a></li>
+                                    <li><a href="tags.html?search=bootstrap">bootstrap</a></li>
+                                    <li><a href="tags.html?search=linux">linux</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -234,7 +234,34 @@
         <!-- Preview Image -->
         <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt="" height="150" width="500" style="text-align:center" > !-->
         <!-- Post Content -->
-        <div class="post-content"></div>
+        <div class="post-content">
+            
+            <div class="col-lg-9">
+                
+                <form  action="update-page.php"  role="form" id="post-listesi" class="form-horizontal" method="POST">
+                  <fieldset>
+                    <legend>post listesi</legend>
+                  </fieldset>
+                  <div class="table-responsive" style="overflow-x:auto;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>başlık</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                    </div>
+                    <input type="hidden" name="id">
+                    <input type="hidden" name="updateId">
+                </form>
+
+            </div>
+
+            </div>
+
+        </div>
     </div>
     <a class="to-top">Yukarı &uarr;</a>
     <footer class="footer-distributed col-lg-12">
