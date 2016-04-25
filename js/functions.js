@@ -303,7 +303,6 @@ function index(){
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         syntaxHighlighter();
-        setInterval(syntaxHighlighter,2000);
         getPost();
     }
 }
@@ -319,29 +318,10 @@ function tags(){
 
 function callFunctions() {
 
-    
-     $.ajax({
-        url: "",
-        context: document.body,
-        success: function(s,x){
-
-            $('html[manifest=saveappoffline.appcache]').attr('content', '');
-                $(this).html(s);
-                alert(true);
-        }
-    }); 
-
     index();
     post_page();
     tags();
     
-
     getAutoComplete();
-
-
-    $("head").append('<link rel="stylesheet" href="css/syntaxhighlighter/shCore.css"><link rel="stylesheet" href="css/syntaxhighlighter/shThemeDefault.css">');
-    $(".footer").append('<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script><script type="text/javascript" src="js/syntaxhighlighter/shBrushJava.js"></script><script type="text/javascript" src="js/syntaxhighlighter/shBrushSql.js"></script>');
-
-
 
 }
