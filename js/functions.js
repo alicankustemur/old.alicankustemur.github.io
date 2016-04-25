@@ -213,13 +213,10 @@ function getAutoComplete(){
       }
     });
 
-    $('.search').keypress(function(event){
-          if(event.which == 13 || event.keyCode == 13){
-            $search = $(".search").val();
-            location.href="tags.html?search="+$search;
-            alert("girilen değer aranıyor..");
-          }
-
+    $("form").submit(function(){
+       $search = $(".search").val();
+        location.href="tags.html?search="+$search;
+        return false;
     });
 
 }
