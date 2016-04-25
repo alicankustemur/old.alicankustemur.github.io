@@ -302,9 +302,9 @@ function index(){
 
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
-        getPost();
         syntaxHighlighter();
         setInterval(syntaxHighlighter,2000);
+        getPost();
     }
 }
 
