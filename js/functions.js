@@ -307,6 +307,7 @@ function post_page(){
         var postReady = getPost();
 
         if(postReady){
+            alert(true);
            syntaxHighlighter();
         }
     }
