@@ -171,7 +171,7 @@ function syntaxHighlighter(){
 
 
 function horizontalScroll() {
-    var url = 'service/posts.json';
+    var url = 'service/posts.json?'+ new Date().getTime();
     var page = [];
 
     $.getJSON(url, function(data) {
@@ -302,8 +302,8 @@ function index(){
 
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
-        syntaxHighlighter();
         getPost();
+        syntaxHighlighter();
     }
 }
 
