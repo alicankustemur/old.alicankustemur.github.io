@@ -41,7 +41,7 @@ function getPagination(num) {
     
     //if(location.pathname != "/alicankustemur.github.io/tags.html" || location.pathname != "/alicankustemur.github.io/tags.html"){
 
-    var url = 'service/posts.json';
+    var url = 'service/posts.json?' + new Date().getTime();
     var page = [];
     $.getJSON(url, function(data) {
 
