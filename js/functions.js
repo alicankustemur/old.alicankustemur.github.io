@@ -41,7 +41,7 @@ function getPagination(num) {
     
     //if(location.pathname != "/alicankustemur.github.io/tags.html" || location.pathname != "/alicankustemur.github.io/tags.html"){
 
-    var url = 'service/posts.json?' + new Date().getTime();
+    var url = 'service/posts.json';
     var page = [];
     $.getJSON(url, function(data) {
 
@@ -81,7 +81,7 @@ function getPagination(num) {
 function getPost() {
     $.ajax({
         type: "GET",
-        url: "service/posts.json?"+ new Date().getTime(),
+        url: "service/posts.json",
         data: {
             "id": "id"
         },
@@ -173,7 +173,7 @@ function syntaxHighlighter(){
 
 
 function horizontalScroll() {
-    var url = 'service/posts.json?'+ new Date().getTime();
+    var url = 'service/posts.json';
     var page = [];
 
     $.getJSON(url, function(data) {
