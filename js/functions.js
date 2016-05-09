@@ -126,6 +126,14 @@ function getPost() {
         error: function(err) {
             alert(err.responseText);
         }
+    }).done(function(){
+         $('sh').each(function(i, obj) {
+            var brush = new SyntaxHighlighter.brushes.Java(),html;
+            brush.init();
+            html = brush.getHtml($(this).html());
+            $(this).html(html);
+        });
+
     });
 
     return true;
@@ -166,7 +174,6 @@ function convert($time) {
 
 function syntaxHighlighter(){
     SyntaxHighlighter.config.bloggerMode = true;
-    SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
 }
@@ -307,13 +314,7 @@ function post_page(){
         var postReady = getPost();
 
         if(postReady){
-           syntaxHighlighter();
-            if(document.URL.indexOf("#")==-1){
-                url = document.URL+"#";
-                location = "#";
-
-                location.reload(true);
-            }
+            syntaxHighlighter();
         }
     }
 }
