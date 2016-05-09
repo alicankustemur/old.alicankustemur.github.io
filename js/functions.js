@@ -127,17 +127,17 @@ function getPost() {
             alert(err.responseText);
         }
     }).done(function(){
-         $('sh.java').each(function(i, obj) {
-            var brush = new SyntaxHighlighter.brushes.Java(),html;
-            brush.init();
-            html = brush.getHtml($(this).html());
-            $(this).html(html);
-        });
-         $('sh.sql').each(function(i, obj) {
-            var brush = new SyntaxHighlighter.brushes.Sql(),html;
-            brush.init();
-            html = brush.getHtml($(this).html());
-            $(this).html(html);
+
+        var brushes = ["java","sql"];
+
+        $.each(brushes,function(index,value){
+            $('sh.'+brushes[index]).each(function(i, obj) {
+                var brush = new SyntaxHighlighter.brushes.Java(),html;
+                var highlight = $(this).attr("highlight");
+                brush.init({highlight:highlight});
+                html = brush.getHtml($(this).html());
+                $(this).html(html);
+            });            
         });
     });
 
