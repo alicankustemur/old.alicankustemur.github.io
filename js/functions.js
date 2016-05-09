@@ -127,23 +127,7 @@ function getPost() {
             alert(err.responseText);
         }
     }).done(function(){
-
-        var brushes = ["java","sql"];
-
-        $.each(brushes,function(index,value){
-            $('sh.'+brushes[index]).each(function(i, obj) {
-                
-                if(brushes[index] == "java"){
-                    var brush = new SyntaxHighlighter.brushes.Java(),html;
-                }else if(brushes[index] == "sql"){
-                    var brush = new SyntaxHighlighter.brushes.Sql(),html;
-                }
-                var highlight = $(this).attr("highlight");
-                brush.init({highlight:highlight});
-                html = brush.getHtml($(this).html());
-                $(this).html(html);
-            });            
-        });
+        syntaxHighlighter();
     });
 
     return true;
@@ -186,6 +170,24 @@ function syntaxHighlighter(){
     SyntaxHighlighter.config.bloggerMode = true;
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
+
+    var brushes = ["java","sql"];
+
+    $.each(brushes,function(index,value){
+        $('sh.'+brushes[index]).each(function(i, obj) {
+            
+            if(brushes[index] == "java"){
+                var brush = new SyntaxHighlighter.brushes.Java(),html;
+            }else if(brushes[index] == "sql"){
+                var brush = new SyntaxHighlighter.brushes.Sql(),html;
+            }
+            var highlight = $(this).attr("highlight");
+            brush.init({highlight:highlight});
+            html = brush.getHtml($(this).html());
+            $(this).html(html);
+        });            
+    });
+
 }
 
 
@@ -321,11 +323,7 @@ function index(){
 
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
-        var postReady = getPost();
-
-        if(postReady){
-            syntaxHighlighter();
-        }
+        getPost();
     }
 }
 
