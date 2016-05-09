@@ -127,13 +127,18 @@ function getPost() {
             alert(err.responseText);
         }
     }).done(function(){
-         $('sh').each(function(i, obj) {
+         $('sh.java').each(function(i, obj) {
             var brush = new SyntaxHighlighter.brushes.Java(),html;
             brush.init();
             html = brush.getHtml($(this).html());
             $(this).html(html);
         });
-
+         $('sh.sql').each(function(i, obj) {
+            var brush = new SyntaxHighlighter.brushes.Sql(),html;
+            brush.init();
+            html = brush.getHtml($(this).html());
+            $(this).html(html);
+        });
     });
 
     return true;
