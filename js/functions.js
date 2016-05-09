@@ -132,7 +132,12 @@ function getPost() {
 
         $.each(brushes,function(index,value){
             $('sh.'+brushes[index]).each(function(i, obj) {
-                var brush = new SyntaxHighlighter.brushes.Java(),html;
+                
+                if(brushes[index] == "java"){
+                    var brush = new SyntaxHighlighter.brushes.Java(),html;
+                }else if(brushes[index] == "sql"){
+                    var brush = new SyntaxHighlighter.brushes.Sql(),html;
+                }
                 var highlight = $(this).attr("highlight");
                 brush.init({highlight:highlight});
                 html = brush.getHtml($(this).html());
