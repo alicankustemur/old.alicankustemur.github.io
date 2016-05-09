@@ -307,11 +307,13 @@ function post_page(){
         var postReady = getPost();
 
         if(postReady){
-            var millisecondsToWait = 500;
-setTimeout(function() {
-    // Whatever you want to do after the wait
-}, millisecondsToWait);
            syntaxHighlighter();
+            if(document.URL.indexOf("#")==-1){
+                url = document.URL+"#";
+                location = "#";
+
+                location.reload(true);
+            }
         }
     }
 }
