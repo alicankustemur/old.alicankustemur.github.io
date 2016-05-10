@@ -127,6 +127,9 @@ function getPost() {
         }
     }).done(function(){
         syntaxHighlighter();
+
+        //set images to responsive
+        $("img.content-img").addClass("img-responsive");
     });
 
     return true;
