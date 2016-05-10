@@ -521,7 +521,7 @@ var SyntaxHighlighter = function() {
             collapse: false,
             "auto-links": true,
             light: false,
-            "html-script": false
+            "html-script": true
         },
         config: {
             space: "&nbsp;",

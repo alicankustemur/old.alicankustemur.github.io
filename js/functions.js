@@ -74,7 +74,6 @@ function getPagination(num) {
 
     });
 
-    //}
 }
 
 
@@ -171,7 +170,7 @@ function syntaxHighlighter(){
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
 
-    var brushes = ["java","sql"];
+    var brushes = ["java","sql","xml","html","plain"];
 
     $.each(brushes,function(index,value){
         $('sh.'+brushes[index]).each(function(i, obj) {
@@ -180,13 +179,19 @@ function syntaxHighlighter(){
                 var brush = new SyntaxHighlighter.brushes.Java(),html;
             }else if(brushes[index] == "sql"){
                 var brush = new SyntaxHighlighter.brushes.Sql(),html;
+            }else if(brushes[index] == "xml"){
+                var brush = new SyntaxHighlighter.brushes.Xml(),html;
+            }else if(brushes[index] == "plain"){
+                var brush = new SyntaxHighlighter.brushes.Plain(),html;
             }
+            
             var highlight = $(this).attr("highlight");
             brush.init({highlight:highlight});
             html = brush.getHtml($(this).html());
             $(this).html(html);
         });            
     });
+
 
 }
 
