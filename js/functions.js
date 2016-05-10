@@ -170,6 +170,13 @@ function syntaxHighlighter(){
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
 
+    $(document).ready(function(){
+       $("pre").each(function(index,object){
+            var attr = $(this).attr("class");
+             $(this).replaceWith('<sh class="brush: '+ attr +'">'+ this.innerHTML +'</sh>');
+        });
+    });
+
     var brushes = ["java","sql","xml","html","plain"];
 
     $.each(brushes,function(index,value){
@@ -191,6 +198,8 @@ function syntaxHighlighter(){
             $(this).html(html);
         });            
     });
+
+    
 
 
 }
