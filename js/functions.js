@@ -1,3 +1,6 @@
+const blogUrl = "/alicankustemur.github.io/";
+const ajaxUrl = "service/posts.json"; 
+
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -21,7 +24,7 @@ function paginationSize() {
 
 
 function totalPostPage() {
-    var url = 'service/posts.json';
+    var url = ajaxUrl;
     $.getJSON(url, function(data) {
         $pageLimit = 4;
         $postCount = data.length;
@@ -41,7 +44,7 @@ function getPagination(num) {
     
     //if(location.pathname != "/alicankustemur.github.io/tags.html" || location.pathname != "/alicankustemur.github.io/tags.html"){
 
-    var url = 'service/posts.json';
+    var url = ajaxUrl;
     var page = [];
     $.getJSON(url, function(data) {
 
@@ -76,11 +79,29 @@ function getPagination(num) {
 
 }
 
+function redirect(){
+    $(document).ready(function(){
+
+        $("title").html("404 Bir hata oluştu.");
+        $(".post-content").html("Aradığınız içerik bulunamamıştır.");
+        $(".post-title").html("<b>404</b> Bir hata oluştu.");
+        $(".post-date").html("");
+        $i = 6 ;
+        setInterval(function(){
+            $i--;
+            $(".post-content").html("Aradığınız içerik bulunamamıştır. <br /> Anasayfaya yönlendiriliyorsunuz... "+$i);
+            if($i == 1){
+                location.href = "http://alicankustemur.github.io";
+            }
+        },1000);
+        
+    });
+}
 
 function getPost() {
     $.ajax({
         type: "GET",
-        url: "service/posts.json",
+        url: ajaxUrl,
         data: {
             "id": "id"
         },
@@ -102,21 +123,7 @@ function getPost() {
                         $(".post-date").html('<span class="fa fa-clock-o"></span> '+convert(arr[i].date));
                         $count++;
                     }else if(i == ( arr.length - 1 ) && $count < 1){
-                        $("title").html("404 Bir hata oluştu.");
-                        $(".post-content").html("Aradığınız içerik bulunamamıştır.");
-                        $(".post-title").html("<b>404</b> Bir hata oluştu.");
-                        $(".post-date").html("");
-                        $i = 6 ;
-                        setInterval(function(){
-                            $i--;
-                            $(".post-content").html("Aradığınız içerik bulunamamıştır. <br /> Anasayfaya yönlendiriliyorsunuz... "+$i);
-                            if($i == 1){
-                                location.href = "http://alicankustemur.github.io";
-                            }
-                        },1000);
-                        
-                        break;
-
+                        redirect();
                     }
                 } 
             }
@@ -209,7 +216,7 @@ function syntaxHighlighter(){
 
 
 function horizontalScroll() {
-    var url = 'service/posts.json';
+    var url = ajaxUrl;
     var page = [];
 
     $.getJSON(url, function(data) {
@@ -231,7 +238,7 @@ function horizontalScroll() {
 
 function getAutoComplete(){
 
-    var url = 'service/posts.json';
+    var url = ajaxUrl;
     var source = [];
     $.getJSON(url, function(data) {
 
@@ -298,7 +305,7 @@ function getTheme(){
 }
 
 function findPostByTag(tag){
-     var url = 'service/posts.json';
+     var url = ajaxUrl;
         $(".searchResult").html(tag + " ile ilgili tüm sonuçlar;");
         $.getJSON(url, function(data) {
 
@@ -321,33 +328,45 @@ function findPostByTag(tag){
 
 }
 
-const blogUrl = "/alicankustemur.github.io/"; 
+function redirectHomePageWhenComeStaticPage(){
+    if(getUrlParameter("p") == null){
+            location.href = "http://alicankustemur.github.io";
+            return true;
+        }else{
+            return false;
+    }
+
+}
 
 function index(){
     if(location.pathname == "/" || location.pathname == blogUrl){
-        getPagination(1);
-        totalPostPage();
-        setInterval(paginationSize, 1000);
-        $(".horizontalScroll").hide();
-        horizontalScroll();
-        $('.horizontalScroll').easyTicker({
-            visible: 1,
-            interval:5000
-            })
-        setInterval(horizontalScroll, 5000);
+            getPagination(1);
+            totalPostPage();
+            setInterval(paginationSize, 1000);
+            $(".horizontalScroll").hide();
+            horizontalScroll();
+            $('.horizontalScroll').easyTicker({
+                visible: 1,
+                interval:5000
+                })
+            setInterval(horizontalScroll, 5000);
     }
 }
 
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
-        getPost();
+        if(!redirectHomePageWhenComeStaticPage()){
+            getPost();
+        }
     }
 }
 
 function tags(){
     if(location.pathname == "/tags.html" || location.pathname == blogUrl + "tags.html"){
-        findPostByTag(getUrlParameter("search")); 
-        getPagination(1);   
+        if(!redirectHomePageWhenComeStaticPage()){
+            findPostByTag(getUrlParameter("search")); 
+            getPagination(1);   
+        }
     }
 }
 
