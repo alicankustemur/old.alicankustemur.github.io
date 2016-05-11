@@ -322,6 +322,9 @@ function findPostByTag(tag){
             }
             if($found == 0){
                     $(".table-responsive").html(tag+" ilgili hiçbir sonuç bulunamamıştır.");
+                    if(tag == undefined){
+                        location.href="http://alicankustemur.github.io";
+                    }
             }
 
         });
@@ -363,10 +366,8 @@ function post_page(){
 
 function tags(){
     if(location.pathname == "/tags.html" || location.pathname == blogUrl + "tags.html"){
-        if(!redirectHomePageWhenComeStaticPage()){
             findPostByTag(getUrlParameter("search")); 
             getPagination(1);   
-        }
     }
 }
 
