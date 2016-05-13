@@ -369,6 +369,8 @@ function post_page(){
         if(!redirectHomePageWhenComeStaticPage()){
             getPost();
             autoFocusToPostContent();
+            autoFocusToPostContent();
+            autoFocusToPostContent();
         }
     }
 }
