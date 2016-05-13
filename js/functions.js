@@ -344,7 +344,7 @@ function redirectHomePageWhenComeStaticPage(){
 function autoFocusToPostContent(){
      $(document).ready(function(){
             if (window.innerWidth <= 480 || window.innerWidth <= 767)  {
-                $('.content-place').trigger('click');
+                $('.content-place').click();
             }
     });
 }
