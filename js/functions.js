@@ -341,6 +341,14 @@ function redirectHomePageWhenComeStaticPage(){
 
 }
 
+function autoFocusToPostContent(){
+     $(document).ready(function(){
+            if (window.innerWidth <= 480 || window.innerWidth <= 767)  {
+                $('.content-place').trigger('click');
+            }
+    });
+}
+
 function index(){
     if(location.pathname == "/" || location.pathname == blogUrl){
             getPagination(1);
@@ -380,5 +388,6 @@ function callFunctions() {
     tags();
     
     getAutoComplete();
+    autoFocusToPostContent();
 
 }

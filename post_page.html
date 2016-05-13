@@ -43,10 +43,10 @@
 
 <body>
     <!-- Left Sidebar Start -->
-    <div class="col-lg-3 left-sidebar fill " style="font-size:13px;"></div>
+    <div class="col-md-3 col-lg-3 left-sidebar fill " style="font-size:13px;"></div>
     <!-- Left Sidebar End -->
     <!-- Navbar Start -->
-    <nav class="navbar navbar-default col-lg-9">
+    <nav class="navbar navbar-default col-md-9 col-lg-9">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -122,6 +122,7 @@
     <div class="col-lg-9" style="margin-bottom:10px;">
         <!-- Blog Post -->
         <!-- Title -->
+        <a href="" id="post-content" ></a>
         <h2 class="post-title"></h2>
         <hr>
         <!-- Date/Time -->
@@ -129,8 +130,11 @@
         <!-- Preview Image -->
         <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt="" height="150" width="500" style="text-align:center" > !-->
         <!-- Post Content -->
-        <div class="post-content"></div>
+        <div class="post-content">
+           
+        </div>
     </div>
+    <a href="#post-content" class="content-place" style="display:none;" ></a> <!-- auto focus to post content -->
     <a class="to-top">Yukarı &uarr;</a>
     <footer class="footer-distributed col-lg-12">
         <div class="footer-right">
@@ -186,7 +190,6 @@
         getPagination(num);
 
     });
-   
     </script>
 </body>
 
