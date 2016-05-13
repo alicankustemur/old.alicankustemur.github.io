@@ -368,6 +368,7 @@ function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         if(!redirectHomePageWhenComeStaticPage()){
             getPost();
+            autoFocusToPostContent();
         }
     }
 }
@@ -388,6 +389,6 @@ function callFunctions() {
     tags();
     
     getAutoComplete();
-    autoFocusToPostContent();
+    
 
 }
