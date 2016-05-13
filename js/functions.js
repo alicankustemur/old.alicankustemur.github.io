@@ -137,6 +137,7 @@ function getPost() {
 
         //set images to responsive
         $("img.content-img").addClass("img-responsive");
+        autoFocusToPostContent();
     });
 
     return true;
@@ -368,9 +369,6 @@ function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         if(!redirectHomePageWhenComeStaticPage()){
             getPost();
-            autoFocusToPostContent();
-            autoFocusToPostContent();
-            autoFocusToPostContent();
         }
     }
 }
