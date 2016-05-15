@@ -5,6 +5,7 @@
 @import url(pagination.css);
 @import url(horizontal-scroll.css);
 @import url(search-autocomplete.css);
+@import url(ajaxLoading.css);
 
 /* jquery autocomplete */
 @import url(http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css);
@@ -82,3 +83,4 @@ body{
 .post-pagination{
 	text-align: center;
 }
+

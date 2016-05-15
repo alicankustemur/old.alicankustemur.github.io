@@ -350,6 +350,15 @@ function autoFocusToPostContent(){
     });
 }
 
+function ajaxLoading(){
+    $body = $("body");
+
+    $(document).on({
+        ajaxStart: function() { $body.addClass("loading");    },
+        ajaxStop: function() { $body.removeClass("loading"); }
+    });
+}
+
 function index(){
     if(location.pathname == "/" || location.pathname == blogUrl){
             getPagination(1);
@@ -376,7 +385,7 @@ function post_page(){
 function tags(){
     if(location.pathname == "/tags.html" || location.pathname == blogUrl + "tags.html"){
             findPostByTag(getUrlParameter("search")); 
-            getPagination(1);   
+            getPagination(1);  
     }
 }
 
@@ -389,6 +398,6 @@ function callFunctions() {
     tags();
     
     getAutoComplete();
-    
+    ajaxLoading();
 
 }
