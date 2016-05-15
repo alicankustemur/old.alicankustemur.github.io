@@ -361,7 +361,11 @@ function ajaxLoading(){
 
 function index(){
     if(location.pathname == "/" || location.pathname == blogUrl){
-            getPagination(1);
+            getPagination(1,{
+                ajaxStart: function() { $body.addClass("loading");    },
+                ajaxStop: function() { $body.removeClass("loading"); }
+             });
+
             totalPostPage();
             setInterval(paginationSize, 1000);
             $(".horizontalScroll").hide();
@@ -377,7 +381,12 @@ function index(){
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         if(!redirectHomePageWhenComeStaticPage()){
-            getPost();
+            $body = $("body");
+
+            getPost({
+                ajaxStart: function() { $body.addClass("loading");    },
+                ajaxStop: function() { $body.removeClass("loading"); }
+             });
         }
     }
 }
@@ -398,6 +407,5 @@ function callFunctions() {
     tags();
     
     getAutoComplete();
-    ajaxLoading();
 
 }
