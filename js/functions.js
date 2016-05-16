@@ -47,7 +47,6 @@ function getPagination(num) {
     var url = ajaxUrl;
     var page = [];
     $.getJSON(url, function(data) {
-
         $pageLimit = 4;
         $postCount = data.length;
         $pageCount = Math.ceil($postCount / $pageLimit);
@@ -138,6 +137,7 @@ function getPost() {
         //set images to responsive
         $("img.content-img").addClass("img-responsive");
         autoFocusToPostContent();
+
     });
 
     return true;
@@ -322,24 +322,21 @@ function findPostByTag(tag){
                   });
             }
             if($found == 0){
-                    $(".table-responsive").html(tag+" ilgili hiçbir sonuç bulunamamıştır.");
-                    if(tag == undefined){
-                        location.href="http://alicankustemur.github.io";
-                    }
+                $(".table-responsive").html(tag+" ilgili hiçbir sonuç bulunamamıştır.");
+                if(tag == undefined){
+                    location.href="http://alicankustemur.github.io";
+                }
             }
-
         });
-
 }
 
 function redirectHomePageWhenComeStaticPage(){
     if(getUrlParameter("p") == null){
-            location.href = "http://alicankustemur.github.io";
-            return true;
-        }else{
-            return false;
+        location.href = "http://alicankustemur.github.io";
+        return true;
+    }else{
+        return false;
     }
-
 }
 
 function autoFocusToPostContent(){
@@ -350,6 +347,7 @@ function autoFocusToPostContent(){
     });
 }
 
+// not using
 function ajaxLoading(){
     $body = $("body");
 
@@ -361,32 +359,23 @@ function ajaxLoading(){
 
 function index(){
     if(location.pathname == "/" || location.pathname == blogUrl){
-            getPagination(1,{
-                ajaxStart: function() { $body.addClass("loading");    },
-                ajaxStop: function() { $body.removeClass("loading"); }
-             });
-
-            totalPostPage();
-            setInterval(paginationSize, 1000);
-            $(".horizontalScroll").hide();
-            horizontalScroll();
-            $('.horizontalScroll').easyTicker({
-                visible: 1,
-                interval:5000
-                })
-            setInterval(horizontalScroll, 5000);
+        getPagination(1);
+        totalPostPage();
+        setInterval(paginationSize, 1000);
+        $(".horizontalScroll").hide();
+        horizontalScroll();
+        $('.horizontalScroll').easyTicker({
+            visible: 1,
+            interval:5000
+            })
+        setInterval(horizontalScroll, 5000);
     }
 }
 
 function post_page(){
     if(location.pathname == "/post_page.html" || location.pathname == blogUrl + "post_page.html"){
         if(!redirectHomePageWhenComeStaticPage()){
-            $body = $("body");
-
-            getPost({
-                ajaxStart: function() { $body.addClass("loading");    },
-                ajaxStop: function() { $body.removeClass("loading"); }
-             });
+            getPost();
         }
     }
 }
@@ -397,7 +386,6 @@ function tags(){
             getPagination(1);  
     }
 }
-
 
 
 function callFunctions() {
