@@ -26,7 +26,7 @@ function paginationSize() {
 function totalPostPage() {
     var url = ajaxUrl;
     $.getJSON(url, function(data) {
-        $pageLimit = 4;
+        $pageLimit = 5;
         $postCount = data.length;
         $pageCount = Math.ceil($postCount / $pageLimit);
 
@@ -47,13 +47,13 @@ function getPagination(num) {
     var url = ajaxUrl;
     var page = [];
     $.getJSON(url, function(data) {
-        $pageLimit = 4;
+        $pageLimit = 5;
         $postCount = data.length;
         $pageCount = Math.ceil($postCount / $pageLimit);
 
         page[0] = data[$postCount - 1].id;
         for (var i = 1; i < $pageCount; i++) {
-            page[i] = page[i - 1] - 4;
+            page[i] = page[i - 1] - 5;
         }
 
         $.each(page, function(key, value) {
@@ -61,7 +61,7 @@ function getPagination(num) {
                 for (var i = 0; i < data.length; i++) {
                     if (value == data[i].id) {
                         var output = "";
-                        for (var j = 0; j < 4; j++) {
+                        for (var j = 0; j < 5; j++) {
                             if (data[i - j] != null) {
                                 output += '<p style="font-size:13px;" ><span class="fa fa-clock-o"></span> ' + convert(data[i - j].date) + '</p> <h4>' + data[i - j].title + '</h4> <p style="font-size:14px;" >' + data[i - j].content_half + '<br /><a  href="post_page.html?p=' + data[i - j].id + '/' + data[i - j].link + '" class="btn btn-default btn-xs">devamını oku ..</a></p> <p class="lead" style="font-size:12px;" ></p><hr>';
                                 //output += '<p style="font-size:13px;" ><span class="fa fa-clock-o"></span> ' + convert(data[i - j].date) + '</p> <h4>' + data[i - j].title + '</h4> <p style="font-size:14px;" >' + data[i - j].content_half + '<a  href="post_page.html?p=' + data[i - j].id + '/' + data[i - j].link + '" class="btn btn-default btn-xs">devamını oku ..</a></p> <p class="lead" style="font-size:12px;" ></p> <p class="pull-right" style="font-size:12px;" ><span class="label label-warning">' + data[i - j].tags + '</span> <span class="label label-success">tag</span> <span class="label label-default">post</span></p> <ul class="list-inline" style="font-size:12px;" ><li><a href="#">29 kasım 2015</a></li><li><a href="#"><i class="fa fa-comment"></i> 4 yorum</a></li><li><a href="#"><i class="fa fa-share"></i> 34 paylaşım</a></li></ul> <hr>';
