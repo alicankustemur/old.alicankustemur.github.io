@@ -314,6 +314,7 @@ function findPostByTag(tag){
             for(var i = 0 ; i < data.length; i++){
                 $tags = data[i].tags.split(",");
                 $.each($tags , function(key,value){
+                    tag = tag.replace(/\s/g, '').toLowerCase();
                     value = value.replace(/\s/g, '').toLowerCase();
                     if(tag == value ){
                         $(".table > tbody").append("<tr><td class=\"rowTitle\"><a href=\"post_page.html?p="+ data[i].id + "/"+ data[i].link +"\">"+ data[i].title +"</a></td></tr>\n");
