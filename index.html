@@ -2,11 +2,13 @@
 <html lang="tr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />
+    
+	<meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ali can kuştemur | bir programcının hayal dünyası</title>
     <!-- Bootstrap CSS -->
+	
     <div class="theme">
         <link rel="stylesheet" href="template/cosmo/bootstrap.min.css" </div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -15,6 +17,8 @@
         <link rel="stylesheet" href="css/syntaxhighlighter/shCore.css">
         <link rel="stylesheet" href="css/syntaxhighlighter/shThemeDefault.css">
         <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="css/pace/themes/black/pace-theme-center-circle.css">
+		
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -28,8 +32,12 @@
         }
         </style>
         
+		
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script>
+		<script src="js/pace.js"></script> 
+
+        
+		<script>
         $(document).ready(function() {
             $(".left-sidebar").load("fragments/left-sidebar.html");
         });
@@ -171,7 +179,7 @@
         <script type="text/javascript" src="plugins/jquery-easy-ticker-master/jquery.easy-ticker.min.js"></script>
         <script type="text/javascript" src="plugins/jquery-easy-ticker-master/test/jquery.easing.min.js"></script>
         <script type="text/javascript" src="js/jquery.collapse.js"></script>
-        <script type="text/javascript">
+		<script type="text/javascript">
         callFunctions();
         $('.post-pagination').bootpag({
             total: 3,
