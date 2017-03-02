@@ -3,13 +3,13 @@
 	border-top: none;
 	border-right:none; 
 	font-style: italic;
-	padding: 0 0 0 45px;
+	padding: 0 0 0 70px;
 	box-shadow: 0 2px 5px -3px #000;
 	position: relative;
 	top: -21px;
 }
 .horizontalScroll:before {
-	content: "rastgele";
+	content: "hasbelkader";
 	display: inline-block;
 	font-style: normal;
 	background: #DD4814;
@@ -24,7 +24,7 @@
     content: '';
     display: block;
     top: 0;
-    left: 80px;
+    left: 100px;
     background: linear-gradient(#FFF, rgba(255, 255, 255, 0));
     height: 20px;
 }
