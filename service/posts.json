@@ -1,8 +1,1 @@
-[{"id":"139","title":"Spring Framework ile Java Tabanl\u0131 DataSource
-Konfigurasyonu","content_half":" driverClassName = com.mysql.jdbc.Driver
-url\r\n= jdbc:mysql:\/\/localhost:3306\/database-name username = root
-password = ...\n","content_full":"
-<sh class=\"brush:java\"> driverClassName = com.mysql.jdbc.Driver
-url\r\n= jdbc:mysql:\/\/localhost:3306\/database-name username = root
-password = <\/sh>","date":"1460987141","tags":"java , spring,
-datasource","link":"spring-framework-ile-java-tabanli-datasource-konfigurasyonu"}]
+[{"id":"139","title":"Spring Framework ile Java Tabanl\u0131 DataSource Konfigurasyonu","content_half":" driverClassName = com.mysql.jdbc.Driver url\r\n= jdbc:mysql:\/\/localhost:3306\/database-name username = root password = ...\n","content_full":"<sh class=\ "brush:java\">\r\ndriverClassName =com.mysql.jdbc.Driver\r\nurl =jdbc:mysql://localhost:3306/database-name\r\nusername = root\r\npassword=&nbsp;\r\n</sh>","date":"1460987141","tags":"java , spring, datasource","link":"spring-framework-ile-java-tabanli-datasource-konfigurasyonu"}]
