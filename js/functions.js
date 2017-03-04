@@ -185,7 +185,14 @@ function syntaxHighlighter(){
        $("pre").each(function(index,object){
             var brush = $(this).attr("class");
             var highlight = $(this).attr("highlight");
-             $(this).replaceWith('<sh class="brush: '+ brush +'" highlight="'+ highlight +'" >'+ this.innerHTML +'</sh>');
+            
+            if(highlight == undefined){
+            	$(this).replaceWith('<sh class="brush: '+ brush +'" >'+ this.innerHTML +'</sh>');
+            }else{
+            	$(this).replaceWith('<sh class="brush: '+ brush +'" highlight="'+ highlight +'" >'+ this.innerHTML +'</sh>');
+            }
+            
+             
         });
     });
 
