@@ -183,8 +183,9 @@ function syntaxHighlighter(){
 
     $(document).ready(function(){
        $("pre").each(function(index,object){
-            var attr = $(this).attr("class");
-             $(this).replaceWith('<sh class="brush: '+ attr +'">'+ this.innerHTML +'</sh>');
+            var brush = $(this).attr("class");
+            var highlight = $(this).attr("highlight");
+             $(this).replaceWith('<sh class="brush: '+ brush +'" highlight="'+ highlight +'" >'+ this.innerHTML +'</sh>');
         });
     });
 
