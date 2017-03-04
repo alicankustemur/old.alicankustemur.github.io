@@ -1,11 +1,1 @@
-[
-	{
-		"id": "139",
-		"title": "Spring Framework ile Java Tabanlı DataSource Konfigurasyonu",
-		"content_half": "Merhaba arkadaşlar ,bu yazdıma Spring Framework DataSource konfigurasyonunu XML kullanmadan sadece Java tabanlı olarak oluşturacağız.(Bu &ouml;rnekte MySQL kullanılacaktır.) \r\n\r\n&Ouml;ncelikle .properties dosyamızı oluşturuyoruz.\r\n\r\n&nbsp;\r\n\r\n\r\ndriverClassName = com.mysql.jdbc.Driver\r\nurl = jdbc:mysql://localhost:3306/database-name\r\nusername = root\r\npassword =&nbsp;\r\n\r\n\r\n&nbsp;\r\n\r\n\r\nArdından sınıfımızı oluşturuyoruz.\r\n\r\n\r\n@Configuration\r\n@PropertySource(&quot;classpath:/mysql.p...\n",
-		"content_full": "<sh class=\"brush: java\">\r\ndriverClassName = com.mysql.jdbc.Driver\r\nurl = jdbc:mysql://localhost:3306/database-name\r\nusername = root\r\npassword =&nbsp;\r\n</sh>",
-		"date": "1460987141",
-		"tags": "java , spring, datasource",
-		"link": "spring-framework-ile-java-tabanli-datasource-konfigurasyonu"
-	}
-]
+[{"id":"139","title":"Spring Framework ile Java Tabanl\u0131 DataSource Konfigurasyonu","content_half":"\r\n\r\ndriverClassName = com.mysql.jdbc.Driver\r\nurl = jdbc:mysql:\/\/localhost:3306\/database-name\r\nusername = root\r\npassword =\u00a0\r\n\r\n...\n","content_full":"<pre class=\"brush:java\">\r\n\r\ndriverClassName = com.mysql.jdbc.Driver\r\nurl = jdbc:mysql:\/\/localhost:3306\/database-name\r\nusername = root\r\npassword =\u00a0\r\n\r\n<\/pre>","date":"1460987141","tags":"java , spring, datasource","link":"spring-framework-ile-java-tabanli-datasource-konfigurasyonu"}]
