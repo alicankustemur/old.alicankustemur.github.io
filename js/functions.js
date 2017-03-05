@@ -407,10 +407,8 @@ function callFunctions() {
     
     var isPaceDone = false;
     
-    var loadingBar = setInterval(function(){ $(".loading-bar").css({"position":"absolute","left":"+=10"});},250);
-    
-    setInterval(function(){
-    	
+    var paceInterval = setInterval(function(){
+    	console.log(true);
     	var paceClass =  $("body").attr("class");
     	paceClass = paceClass.replace(/\s/g, '');
     	
@@ -425,9 +423,14 @@ function callFunctions() {
     		
     },100);
     
-    if(isPaceDone){
-    	clearInterval(loadingBar);
-    }
+    setTimeout(function(){
+    	if(isPaceDone){
+        	clearInterval(paceInterval);
+        }
+    },5000);
+    
+    
+    
     
     
 
