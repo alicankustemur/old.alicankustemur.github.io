@@ -398,11 +398,37 @@ function tags(){
 
 
 function callFunctions() {
-
+	$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .to-top").css("display","none");
     index();
     post_page();
     tags();
     
     getAutoComplete();
+    
+    var isPaceDone = false;
+    
+    var loadingBar = setInterval(function(){ $(".loading-bar").css({"position":"absolute","left":"+=10"});},250);
+    
+    setInterval(function(){
+    	
+    	var paceClass =  $("body").attr("class");
+    	paceClass = paceClass.replace(/\s/g, '');
+    	
+    	if(paceClass != "pace-done"){
+        	$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .to-top, .post-pagination, #disqus_thread").css("display","none");
+    	}else{
+    		$("body").removeAttr('style');
+    		$(".loading-bar").css("display","none");
+    		$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .post-full, .post-pagination, #disqus_thread").css("display",'');
+    		isPaceDone = true;
+    	}
+    		
+    },100);
+    
+    if(isPaceDone){
+    	clearInterval(loadingBar);
+    }
+    
+    
 
 }
