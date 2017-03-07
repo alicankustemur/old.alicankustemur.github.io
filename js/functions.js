@@ -396,6 +396,34 @@ function tags(){
     }
 }
 
+function setDisplayNoneUntilPageLoad(){
+	 var isPaceDone = false;
+	    var paceInterval = setInterval(function(){
+	    	var paceClass =  $("body").attr("class");
+	    	paceClass = paceClass.replace(/\s/g, '');
+	    	
+	    	var selectors = ".left-sidebar, nav.navbar, .horizontalScroll, .post-full, .content, .post-content, footer.footer-distributed, .to-top, .post-pagination, #disqus_thread";
+	    	
+	    	if(paceClass != "pace-done"){
+	        	$(selectors).css("display","none");
+	    	}else{
+	    		$("body").removeAttr('style');
+	    		$(".loading-bar").css("display","none");
+	    		
+	    		selectors = selectors.replace(".to-top,",'');
+	    		$(selectors).css("display",'');
+	    		isPaceDone = true;
+	    	}
+	    		
+	    },100);
+	    
+	    setTimeout(function(){
+	    	if(isPaceDone){
+	        	clearInterval(paceInterval);
+	        }
+	    },5000);
+}
+
 
 function callFunctions() {
 	$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .to-top").css("display","none");
@@ -405,33 +433,6 @@ function callFunctions() {
     
     getAutoComplete();
     
-    var isPaceDone = false;
+    setDisplayNoneUntilPageLoad();
     
-    var paceInterval = setInterval(function(){
-    	console.log(true);
-    	var paceClass =  $("body").attr("class");
-    	paceClass = paceClass.replace(/\s/g, '');
-    	
-    	if(paceClass != "pace-done"){
-        	$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .to-top, .post-pagination, #disqus_thread").css("display","none");
-    	}else{
-    		$("body").removeAttr('style');
-    		$(".loading-bar").css("display","none");
-    		$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .post-full, .post-pagination, #disqus_thread").css("display",'');
-    		isPaceDone = true;
-    	}
-    		
-    },100);
-    
-    setTimeout(function(){
-    	if(isPaceDone){
-        	clearInterval(paceInterval);
-        }
-    },5000);
-    
-    
-    
-    
-    
-
 }
