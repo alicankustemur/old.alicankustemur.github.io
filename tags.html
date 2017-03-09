@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ali can kuştemur | bir programcının hayal dünyası</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->
     <div class="theme">
         <link rel="stylesheet" href="template/cosmo/bootstrap.min.css">
@@ -30,8 +31,25 @@
     }
     </style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+	  (function(i, s, o, g, r, a, m) {
+	      i['GoogleAnalyticsObject'] = r;
+	      i[r] = i[r] || function() {
+	          (i[r].q = i[r].q || []).push(arguments)
+	      }, i[r].l = 1 * new Date();
+	      a = s.createElement(o),
+	          m = s.getElementsByTagName(o)[0];
+	      a.async = 1;
+	      a.src = g;
+	      m.parentNode.insertBefore(a, m)
+	  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+	  ga('create', 'UA-62895124-2', 'auto');
+	  ga('send', 'pageview');
+    </script>
     <script src="js/pace.js"></script> 
 	<script>
+	
     $(document).ready(function() {
         $(".left-sidebar").load("fragments/left-sidebar.html");
     });
@@ -40,10 +58,10 @@
 
 <body>
     <!-- Left Sidebar Start -->
-    <div class="col-lg-3 left-sidebar fill " style="font-size:13px;"></div>
+    <div class="col-lg-3 left-sidebar fill " style="font-size:13px;display:none;"></div>
     <!-- Left Sidebar End -->
     <!-- Navbar Start -->
-    <nav class="navbar navbar-default col-lg-9">
+    <nav class="navbar navbar-default col-lg-9" style="display:none;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -129,7 +147,7 @@
         <!-- Preview Image -->
         <!-- <img class="img-responsive" src="http://placehold.it/900x300" alt="" height="150" width="500" style="text-align:center" > !-->
         <!-- Post Content -->
-        <div class="post-content">
+        <div class="post-content" style="display:none;" >
             <div class="col-lg-9">
                 <form action="update-page.php" role="form" id="post-listesi" class="form-horizontal" method="POST">
                     <fieldset>
@@ -153,9 +171,9 @@
         </div>
     </div>
     </div>
-    <a href="#post-content" class="content-place" style="display:none;" ></a> <!-- auto focus to post content -->
-    <a class="to-top">Yukarı &uarr;</a>
-    <footer class="footer-distributed col-lg-12">
+    <a href="#post-content" class="content-place" ></a> <!-- auto focus to post content -->
+    <a class="to-top" style="display:none;">yukarı &uarr;</a>
+    <footer class="footer-distributed col-lg-12" style="display:none;">
         <div class="footer-right">
             <!--
         <a href="#"><i class="fa fa-facebook"></i></a>

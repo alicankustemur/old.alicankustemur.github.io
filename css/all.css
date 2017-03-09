@@ -84,3 +84,16 @@ body{
 	text-align: center;
 }
 
+.center{
+	text-align:center;
+}
+
+.img-center{
+	margin: 0 auto;
+}
+.img-border
+{
+	 box-shadow: 8px 8px 10px #aaa;
+-moz-border-radius: 25px 10px / 10px 25px;
+border-radius: 25px 10px / 10px 25px;
+}

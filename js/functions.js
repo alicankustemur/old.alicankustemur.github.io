@@ -183,8 +183,16 @@ function syntaxHighlighter(){
 
     $(document).ready(function(){
        $("pre").each(function(index,object){
-            var attr = $(this).attr("class");
-             $(this).replaceWith('<sh class="brush: '+ attr +'">'+ this.innerHTML +'</sh>');
+            var brush = $(this).attr("class");
+            var highlight = $(this).attr("highlight");
+            
+            if(highlight == undefined){
+            	$(this).replaceWith('<sh class="brush: '+ brush +'" >'+ this.innerHTML +'</sh>');
+            }else{
+            	$(this).replaceWith('<sh class="brush: '+ brush +'" highlight="'+ highlight +'" >'+ this.innerHTML +'</sh>');
+            }
+            
+             
         });
     });
 
@@ -388,13 +396,43 @@ function tags(){
     }
 }
 
+function setDisplayNoneUntilPageLoad(){
+	 var isPaceDone = false;
+	    var paceInterval = setInterval(function(){
+	    	var paceClass =  $("body").attr("class");
+	    	paceClass = paceClass.replace(/\s/g, '');
+	    	
+	    	var selectors = ".left-sidebar, nav.navbar, .horizontalScroll, .post-full, .content, .post-content, footer.footer-distributed, .to-top, .post-pagination, #disqus_thread";
+	    	
+	    	if(paceClass != "pace-done"){
+	        	$(selectors).css("display","none");
+	    	}else{
+	    		$("body").removeAttr('style');
+	    		$(".loading-bar").css("display","none");
+	    		
+	    		selectors = selectors.replace(".to-top,",'');
+	    		$(selectors).css("display",'');
+	    		isPaceDone = true;
+	    	}
+	    		
+	    },100);
+	    
+	    setTimeout(function(){
+	    	if(isPaceDone){
+	        	clearInterval(paceInterval);
+	        }
+	    },5000);
+}
+
 
 function callFunctions() {
-
+	$(".left-sidebar, nav.navbar, .horizontalScroll, .content, footer.footer-distributed, .to-top").css("display","none");
     index();
     post_page();
     tags();
     
     getAutoComplete();
-
+    
+    setDisplayNoneUntilPageLoad();
+    
 }

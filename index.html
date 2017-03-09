@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ali can kuştemur | bir programcının hayal dünyası</title>
+     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->
 	
     <div class="theme">
-        <link rel="stylesheet" href="template/cosmo/bootstrap.min.css" </div>
+        <link rel="stylesheet" href="template/cosmo/bootstrap.min.css"> </div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="plugins/jquery-simplyscroll-2.0.X/jquery.simplyscroll.css">
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/syntaxhighlighter/shCore.css">
         <link rel="stylesheet" href="css/syntaxhighlighter/shThemeDefault.css">
-        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+       
 		<link rel="stylesheet" href="css/pace/themes/black/pace-theme-center-circle.css">
 		
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,22 +35,44 @@
         
 		
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="js/pace.js"></script> 
+		<script type="text/javascript">
+		</script>
+		<script type="text/javascript">
+		  (function(i, s, o, g, r, a, m) {
+		      i['GoogleAnalyticsObject'] = r;
+		      i[r] = i[r] || function() {
+		          (i[r].q = i[r].q || []).push(arguments)
+		      }, i[r].l = 1 * new Date();
+		      a = s.createElement(o),
+		          m = s.getElementsByTagName(o)[0];
+		      a.async = 1;
+		      a.src = g;
+		      m.parentNode.insertBefore(a, m)
+		  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        
+		  ga('create', 'UA-62895124-2', 'auto');
+		  ga('send', 'pageview');
+		</script>
+		<script src="js/pace.js"></script> 
 		<script>
+		
         $(document).ready(function() {
+        	
             $(".left-sidebar").load("fragments/left-sidebar.html");
         });
+        
+        
+        
         </script>
 </head>
 
 <body>
+
     <!-- Left Sidebar Start -->
-    <div class="col-lg-3 col-sm-3 left-sidebar fill" style="font-size:13px;"></div>
+    <div class="col-lg-3 col-sm-3 left-sidebar fill" style="font-size:13px;display:none;"></div>
     <!-- Left Sidebar End -->
     <!-- Navbar Start -->
-    <nav class="navbar navbar-default col-lg-9">
+    <nav class="navbar navbar-default col-lg-9" style="display:none;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -58,7 +81,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://whoismrrobot.com">~ whoismrrobot</a>
+                <a class="navbar-brand" href="http://whoismrrobot.com" target="_blank"> ~ whoismrrobot</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -129,16 +152,16 @@
         </div>
     </nav>
     <!-- Navbar End -->
-    <div class="horizontalScroll col-lg-9">
+    <div class="horizontalScroll col-lg-9" style="display:none;">
         <ul></ul>
     </div>
-    <div class="col-lg-9 content">
+    <div class="col-lg-9 content" style="display:none;">
     </div>
-    <div class="col-lg-12 post-pagination"></div>
+    <div class="col-lg-12 post-pagination" style="display:none;"></div>
     <a href="#post-content" class="content-place" style="display:none;" ></a> <!-- auto focus to post content -->
-    <a class="to-top">Yukarı &uarr;</a>
+    <a class="to-top" style="display:none;">yukarı &uarr;</a>
     <div class="modal"></div>
-    <footer class="footer-distributed col-lg-12">
+    <footer class="footer-distributed col-lg-12" style="display:none;">
         <div class="footer-right">
             <!--
         <a href="#"><i class="fa fa-facebook"></i></a>
